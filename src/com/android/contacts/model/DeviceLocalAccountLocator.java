@@ -30,10 +30,12 @@ import java.util.List;
 public final class DeviceLocalAccountLocator {
 
     private final Context mContext;
+    private final AccountManager mAccountManager;
     private final List<AccountWithDataSet> mLocalAccount;
 
-    public DeviceLocalAccountLocator(Context context) {
+    public DeviceLocalAccountLocator(Context context, AccountManager accountManager) {
         mContext = context;
+        mAccountManager = accountManager;
         mLocalAccount = Collections.singletonList(AccountWithDataSet.getLocalAccount(context));
     }
 

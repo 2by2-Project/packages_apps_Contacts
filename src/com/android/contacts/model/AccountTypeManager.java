@@ -431,7 +431,7 @@ class AccountTypeManagerImpl extends AccountTypeManager
     /** Internal constructor that only performs initial parsing. */
     public AccountTypeManagerImpl(Context context) {
         mContext = context;
-        mLocalAccountLocator = new DeviceLocalAccountLocator(context);
+        mLocalAccountLocator = new DeviceLocalAccountLocator(context, AccountManager.get(context));
         mTypeProvider = new AccountTypeProvider(context);
         mFallbackAccountType = new FallbackAccountType(context);
 
